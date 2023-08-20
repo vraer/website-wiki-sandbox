@@ -1,0 +1,11 @@
+.git/
+.gitignore
+.github/
+.vscode/
+site/
+venv/
+__pycache__/
+*.pyc
+pip-wheel-metadata/
+.DS_Store
+Thumbs.db

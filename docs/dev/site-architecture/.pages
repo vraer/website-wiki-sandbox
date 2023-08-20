@@ -1,0 +1,7 @@
+nav:
+- index.md
+- HFLA website pages: website-pages
+- Guides and tutorials:
+      - Standardized components: standardized-components.md
+      - Duplicate style classes: duplicate-style-classes.md
+- Legacy: legacy

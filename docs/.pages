@@ -1,0 +1,14 @@
+nav:
+  - Home:
+      - index.md
+      - Contribute: contribute-to-docs.md
+      - Labels & Milestones: labels-and-milestones.md
+      - Project Terminology: project-terminology.md
+      - Decision Records: decision-records
+      - HFLA Website Overview: website-pages
+      - Tags Index: tags.md
+      - All pages A-Z: all-pages.md
+  - Development: dev
+  - Design: design
+  - Project Management: product
+  - User Research: research

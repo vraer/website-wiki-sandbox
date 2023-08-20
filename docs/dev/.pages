@@ -1,0 +1,6 @@
+nav:
+- index.md
+- Decision Records: decision-records.md
+- GitHub Actions: github-actions
+- Site Architecture: site-architecture
+#- Legacy Docs: legacy

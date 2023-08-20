@@ -1,17 +1,17 @@
-# Use official python runtime as a parent image
-FROM python:3.9-slim-buster
+# Use Python 3.10.11 image as the base
+FROM python:3.10-slim-bullseye
 
-# Set the working directory in the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
+# Copy the current directory to the container 
 COPY . /app
 
-# Install any needed packages specified in requirements.txt
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 8000 for mkdocs server
+# Expose port 8000  
 EXPOSE 8000
 
-# Run mkdocs serve when the container launches
+# Start mkdocs dev server
 CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
