@@ -6,7 +6,6 @@ mkdocs-material-extensions>=1.1
 pygments>=2.14
 pymdown-extensions>=9.9.1
 mkdocs-awesome-pages-plugin
-mkdocs-live-edit-plugin
 mkdocs-minify-plugin
 colorama>=0.4
 regex>=2022.4.24
