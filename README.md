@@ -9,8 +9,8 @@ This repo contains a MkDocs documentation site for collaboratively building the 
 The quickest way to run the site is using Docker:
 
 ``` bash
-docker pull vraer/hfla-website-wiki-sandbox
-docker run -p 8000:8000 vraer/hfla-website-wiki-sandbox
+docker pull vraer/hfla-website-wiki-sandbox:latest
+docker run -p 8000:8000 vraer/hfla-website-wiki-sandbox:latest
 ```
 
 The site will now be running at <http://localhost:8000>.
