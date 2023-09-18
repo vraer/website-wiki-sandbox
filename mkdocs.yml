@@ -68,8 +68,7 @@ plugins:
       minify_html: true
   - search: {}
   - autolinks: {}
-  # !IMPORTANT: mkdocs-live-edit-plugin installed locally for personal use. Remove before merging upstream.
-  #- live-edit: {}
+  - git-revision-date-localized: {}
 
 hooks:
   - hooks/page_links_by_tag.py
