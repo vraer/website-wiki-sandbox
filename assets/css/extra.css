@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap");
 
 :root {
   --md-text-font: "Inter Tight", sans-serif;
   --md-code-font: "Roboto Mono", monospace;
-
   --md-typeset: {
     font-size: 16px;
     line-height: 1.5;
@@ -28,12 +27,18 @@
 }
 
 .md-typeset h1 {
-  font: 700 1.6rem/1.5 var(--md-text-font);
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: var(--md-text-font);
   margin-bottom: 0.5rem;
 }
 
 .md-typeset h2 {
-  font: 700 1.2rem/1.4 var(--md-text-font);
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--md-text-font);
   margin-top: 1.5rem;
   border-bottom: 0.01rem solid rgba(148, 148, 148, 0.218);
   padding-bottom: 0.01rem;
@@ -41,11 +46,16 @@
 }
 
 .md-typeset h3 {
-  font: 700 0.9rem/1.3 var(--md-text-font);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  font-family: var(--md-text-font);
 }
 
 .md-typeset h4 {
-  font: 600 0.8rem/1.3 var(--md-text-font);
+  font-weight: 600;
+  font-size: 0.8rem;
+  line-height: 1.3;
   color: var(--md-divider-color);
   margin: 1rem 0;
 }
@@ -57,14 +67,14 @@
   margin: 1em 0;
 }
 
-.md-typeset .grid.cards>ol,
-.md-typeset .grid.cards>ul {
+.md-typeset .grid.cards > ol,
+.md-typeset .grid.cards > ul {
   display: contents;
 }
 
-.md-typeset .grid.cards>ol>li,
-.md-typeset .grid.cards>ul>li,
-.md-typeset .grid>.card {
+.md-typeset .grid.cards > ol > li,
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid > .card {
   border: 0.01rem solid var(--md-default-fg-color--lightest);
   border-radius: 0.2rem;
   display: block;
@@ -74,60 +84,68 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.125);
 }
 
-.md-typeset .grid.cards>ol>li:focus-within,
-.md-typeset .grid.cards>ol>li:hover,
-.md-typeset .grid.cards>ul>li:focus-within,
-.md-typeset .grid.cards>ul>li:hover,
-.md-typeset .grid>.card:focus-within,
-.md-typeset .grid>.card:hover {
+.md-typeset .grid.cards > ol > li:focus-within,
+.md-typeset .grid.cards > ol > li:hover,
+.md-typeset .grid.cards > ul > li:focus-within,
+.md-typeset .grid.cards > ul > li:hover,
+.md-typeset .grid > .card:focus-within,
+.md-typeset .grid > .card:hover {
   border-color: var(--md-shadow-z2);
   box-shadow: var(--md-shadow-z2);
 }
 
-.md-typeset .grid.cards>ol>li>hr,
-.md-typeset .grid.cards>ul>li>hr,
-.md-typeset .grid>.card>hr {
+.md-typeset .grid.cards > ol > li > hr,
+.md-typeset .grid.cards > ul > li > hr,
+.md-typeset .grid > .card > hr {
   margin-bottom: 1em;
   margin-top: 1em;
 }
 
-.md-typeset .grid.cards>ol>li> :first-child,
-.md-typeset .grid.cards>ul>li> :first-child,
-.md-typeset .grid>.card> :first-child {
+.md-typeset .grid.cards > ol > li > :first-child,
+.md-typeset .grid.cards > ul > li > :first-child,
+.md-typeset .grid > .card > :first-child {
   margin-top: 0;
 }
 
-.md-typeset .grid.cards>ol>li> :last-child,
-.md-typeset .grid.cards>ul>li> :last-child,
-.md-typeset .grid>.card> :last-child {
+.md-typeset .grid.cards > ol > li > :last-child,
+.md-typeset .grid.cards > ul > li > :last-child,
+.md-typeset .grid > .card > :last-child {
   margin-bottom: 0;
 }
 
-.md-typeset .grid>*,
-.md-typeset .grid>.admonition,
-.md-typeset .grid>.highlight>*,
-.md-typeset .grid>.highlighttable,
-.md-typeset .grid>.md-typeset details,
-.md-typeset .grid>details,
-.md-typeset .grid>pre {
+.md-typeset .grid > *,
+.md-typeset .grid > .admonition,
+.md-typeset .grid > .highlight > *,
+.md-typeset .grid > .highlighttable,
+.md-typeset .grid > .md-typeset details,
+.md-typeset .grid > details,
+.md-typeset .grid > pre {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.md-typeset .grid>.highlight>pre:only-child,
-.md-typeset .grid>.highlight>pre>code,
-.md-typeset .grid>.highlighttable,
-.md-typeset .grid>.highlighttable>tbody,
-.md-typeset .grid>.highlighttable>tbody>tr,
-.md-typeset .grid>.highlighttable>tbody>tr>.code,
-.md-typeset .grid>.highlighttable>tbody>tr>.code>.highlight,
-.md-typeset .grid>.highlighttable>tbody>tr>.code>.highlight>pre,
-.md-typeset .grid>.highlighttable>tbody>tr>.code>.highlight>pre>code {
+.md-typeset .grid > .highlight > pre:only-child,
+.md-typeset .grid > .highlight > pre > code,
+.md-typeset .grid > .highlighttable,
+.md-typeset .grid > .highlighttable > tbody,
+.md-typeset .grid > .highlighttable > tbody > tr,
+.md-typeset .grid > .highlighttable > tbody > tr > .code,
+.md-typeset .grid > .highlighttable > tbody > tr > .code > .highlight,
+.md-typeset .grid > .highlighttable > tbody > tr > .code > .highlight > pre,
+.md-typeset
+  .grid
+  > .highlighttable
+  > tbody
+  > tr
+  > .code
+  > .highlight
+  > pre
+  > code {
   height: 100%;
 }
 
 /* Remove margins for tabbed-set elements within the grid */
-.md-typeset .grid>.tabbed-set {
+.md-typeset .grid > .tabbed-set {
   margin-bottom: 0;
   margin-top: 0;
 }
