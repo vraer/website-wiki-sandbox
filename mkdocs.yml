@@ -7,15 +7,15 @@ theme:
   palette:
     # Palette toggle for light mode
     - scheme: default
-      primary: deep purple
-      accent: deep purple
+      primary: black
+      accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     # Palette toggle for dark mode
     - scheme: slate
-      primary: deep purple
-      accent: deep purple
+      primary: black
+      accent: pink
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
@@ -41,14 +41,15 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
-    - toc.integrate
+    #- toc.integrate
 
 extra_css:
-  - stylesheets/extra.css
+  - assets/css/extra.css
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
-  - javascript/tablesort.js
+  - assets/js/tablesort.js
+  - assets/js/custom_admonition.js
 
 repo_url: https://github.com/vraer/website-wiki-sandbox/
 repo_name: vraer/website-wiki-sandbox/
@@ -66,10 +67,14 @@ plugins:
   - minify:
       minify_html: true
   - search: {}
+  - autolinks: {}
+  # !IMPORTANT: mkdocs-live-edit-plugin installed locally for personal use. Remove before merging upstream.
+  #- live-edit: {}
 
 hooks:
-  - hooks/generate_tagged_pages.py
-  - hooks/generate_page_table.py
+  - hooks/page_links_by_tag.py
+  - hooks/all_pages_table.py
+  - hooks/preprocess.py
 
 # Extensions
 markdown_extensions:
@@ -83,8 +88,7 @@ markdown_extensions:
   - toc:
       title: On this page
       permalink: "#"
-
-  # Python Markdown Extensions
+  # Pymdown Extensions
   - pymdownx.betterem
   - pymdownx.caret
   - pymdownx.details

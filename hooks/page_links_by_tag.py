@@ -21,9 +21,9 @@ for filepath in glob.glob("docs/**/*.md", recursive=True):
 
             # Generate the heading with details and summary tags
             tag_names_with_links = " ".join(
-                [f'<a href="../../tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag">{tag}</a>' for tag in required_tags]  # noqa: E501
+                [f'<a href="../../tags/#{tag.replace(": ", "-").replace(" ", "-")}" class="md-tag">{tag}</a>' for tag in required_tags]  
                 )
-            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{tag_names_with_links}</p></details>\n\n'  # noqa: E501, E999
+            heading = f'<!-- TAGS={match.group(1)} BEGIN -->\n<details class="md-tag-details"><summary class="md-tag-summary">Tags</summary>\n<p>{tag_names_with_links}</p></details>\n\n'  
 
 
             # List to store pages that meet the criteria
