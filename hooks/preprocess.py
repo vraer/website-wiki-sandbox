@@ -1,26 +1,45 @@
 import re
 import glob
+import hashlib
+
+hashes = {}
+
+def file_hash(file_path):
+    with open(file_path, 'rb') as f:
+        return hashlib.md5(f.read()).hexdigest()
 
 def preprocess_markdown(file_path):
+    current_hash = file_hash(file_path)
+    if hashes.get(file_path) == current_hash:
+        return  # Skip unchanged files
+
     with open(file_path, 'r') as f:
-        content = f.readlines()
+        content = f.read()
 
-    modified_content = []
-    for line in content:
-        # Add 'markdown' and custom class to <details> tags
-        if '<details>' in line:
-            line = line.replace('<details>', '<details markdown>')
-        
-        # Update nested lists from 2 spaces to 4 spaces
-        if re.match(r' {2}- ', line):
-            line = re.sub(r' {2}- ', '    - ', line)
+    content = re.sub(r'<details[^>]*>', '<details markdown>', content)
 
-        modified_content.append(line)
+    inside_details = False
+    lines = content.split('\\n')
+    modified_lines = []
 
-    # Write back to the file
+    for line in lines:
+        if '<details' in line:
+            inside_details = True
+        elif '</details>' in line:
+            inside_details = False
+
+        if inside_details:
+            line = line.replace('<br>', '')
+
+        modified_lines.append(line)
+
+    modified_content = '\\n'.join(modified_lines)
+
     with open(file_path, 'w') as f:
-        f.writelines(modified_content)
+        f.write(modified_content)
 
-# Search for all Markdown files in the 'docs/' directory
-for file_path in glob.glob("docs/*.md", recursive=True):
-    preprocess_markdown(file_path)
+    hashes[file_path] = current_hash  # Update the hash
+
+if __name__ == '__main__':
+    for markdown_file in glob.glob('**/*.md', recursive=True):
+        preprocess_markdown(markdown_file)
