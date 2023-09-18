@@ -69,26 +69,3 @@ if start_index != -1 and end_index != -1:
     new_content = content[:start_index + len(placeholder_start)] + "\n" + table + "\n" + content[end_index:]
     with open(designated_page, "w", encoding="utf-8") as file:
         file.write(new_content)
-
-# Initialize an empty list to hold file paths for pages in "pending-audit"
-pending_audit_pages = []
-
-# Loop through all markdown files in the "docs/" directory and its subdirectories
-for filepath in glob.glob("docs/**/*.md", recursive=True):
-    # Check if 'pending-audit' is in the file's path
-    if 'pending-audit' in filepath:
-        # Append to the list of pending_audit_pages
-        pending_audit_pages.append(filepath)
-
-# Generate Markdown content for "content-audit-status.md" with the same table formatting as in this script
-markdown_content = "# Content Audit Status\n\n"
-markdown_content += "| File Path | Status |\n"
-markdown_content += "|-----------|--------|\n"
-
-# Loop through the list of pending_audit_pages to populate the table
-for page in pending_audit_pages:
-    markdown_content += f"| {page} | Pending Audit |\n"
-
-# Write this Markdown content to a new "content-audit-status.md" file in the "docs/" directory
-with open("docs/content-audit-status.md", "w") as f:
-    f.write(markdown_content)
